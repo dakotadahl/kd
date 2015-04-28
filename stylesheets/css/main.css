@@ -3,3 +3,500 @@ html {
 
 *, *::after, *::before {
   box-sizing: inherit; }
+
+.outer-container {
+  max-width: 95%;
+  margin-left: auto;
+  margin-right: auto; }
+  .outer-container::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+body {
+  font-size: 16px;
+  line-height: 2.7rem;
+  font-family: "athelas", serif;
+  background-color: #212D3D;
+  color: #8DB8ED;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 50px; }
+  body h1, body h2, body h3, body h4, body h5, body h6 {
+    font-family: "sofia-pro", "Sofia Pro", sans-serif; }
+
+a {
+  text-decoration: none;
+  color: #8DB8ED; }
+
+section {
+  position: relative; }
+
+h2 {
+  font-size: 2.1rem;
+  font-weight: 600;
+  letter-spacing: .025em;
+  margin-top: 0; }
+  h2.block {
+    font-weight: 500;
+    letter-spacing: 0; }
+
+.italic {
+  font-style: italic;
+  font-family: "athelas", serif;
+  font-weight: normal; }
+
+.title .italic {
+  font-weight: bold; }
+
+.small-caps, .home-thumb.ajmf:after, .home-thumb.five-seasons:after, .home-thumb.cellular:after {
+  font-family: "sofia-pro", "Sofia Pro", sans-serif;
+  font-size: 80%;
+  letter-spacing: .09rem;
+  font-weight: 600;
+  text-transform: uppercase; }
+
+.block-overlay {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  text-align: center;
+  height: 100%; }
+  .block-overlay:before {
+    position: absolute;
+    content: " ";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 580px;
+    display: block;
+    z-index: 0;
+    background-color: #212D3D;
+    opacity: .2;
+    -webkit-transition: opacity 0.4s ease;
+    -moz-transition: opacity 0.4s ease;
+    transition: opacity 0.4s ease; }
+  .block-overlay h2 {
+    margin-bottom: 0; }
+  .block-overlay p {
+    font-size: 1.2rem;
+    line-height: 1.6rem; }
+  .block-overlay h2, .block-overlay p {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+
+.my-work:hover {
+  cursor: pointer; }
+  .my-work:hover:before {
+    opacity: 0; }
+  .my-work:hover h2 {
+    margin-top: -6px; }
+  .my-work:hover p {
+    line-height: 2rem; }
+
+.vertical-line {
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 6.1721527019%;
+  border-right: 2px solid #8DB8ED; }
+  .vertical-line:last-child {
+    margin-right: 0; }
+
+.vertical-anchor {
+  position: relative; }
+  .vertical-anchor img {
+    position: absolute;
+    bottom: -32px;
+    left: 42px;
+    z-index: 400; }
+
+.horizontal-anchor {
+  transform: rotate(90deg); }
+
+nav {
+  position: fixed;
+  width: 100%;
+  z-index: 99; }
+  nav .brand {
+    position: absolute;
+    left: 67px;
+    top: 115px; }
+  nav .menu-toggle {
+    position: absolute;
+    right: 55px;
+    top: 45px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer; }
+    nav .menu-toggle p {
+      transform: rotate(-90deg); }
+    nav .menu-toggle .toggle {
+      position: absolute;
+      right: 13px;
+      top: 77px; }
+    nav .menu-toggle p, nav .menu-toggle .toggle {
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+    nav .menu-toggle:hover p {
+      color: #e5effb; }
+    nav .menu-toggle:hover .toggle {
+      top: 87px;
+      transform: rotateY(180deg); }
+
+.hero {
+  min-height: 80vh;
+  padding-top: 60vh; }
+  .hero .block {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 40.2913699012%; }
+    .hero .block:last-child {
+      margin-right: 0; }
+  .hero .vertical-line {
+    height: 40vh;
+    box-sizing: border-box; }
+
+.my-work {
+  position: relative;
+  min-height: 580px;
+  background-image: url("../../img/stonemountain.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 100%; }
+  .my-work:last-child {
+    margin-right: 0; }
+  .my-work .block-overlay {
+    padding-top: 21%; }
+  .my-work .horizontal-anchor {
+    position: absolute;
+    bottom: -47px;
+    transform: rotate(-90deg);
+    left: 50%; }
+
+.work-grid {
+  position: relative;
+  margin-top: 200px;
+  height: 1950px;
+  padding-bottom: 200px; }
+
+.home-thumb.ajmf {
+  margin-top: 100px;
+  background-image: url("../../img/ajmf.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 57.3509785009%;
+  margin-left: 8.5298042998%;
+  height: 380px;
+  overflow: hidden;
+  position: relative; }
+  .home-thumb.ajmf:last-child {
+    margin-right: 0; }
+  .home-thumb.ajmf:before {
+    position: relative;
+    content: " ";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 0;
+    background-color: #212D3D;
+    opacity: .5;
+    -webkit-transition: opacity 0.2s ease;
+    -moz-transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease; }
+  .home-thumb.ajmf:after {
+    background-image: url("../../svg/diamond.svg");
+    background-size: 7%;
+    background-position: 20px 12px;
+    background-repeat: no-repeat;
+    position: absolute;
+    content: "Illustration";
+    border: 2px solid #8DB8ED;
+    transform: rotate(90deg);
+    line-height: 2rem;
+    padding: 10px;
+    display: block;
+    z-index: 50;
+    top: 162px;
+    right: -162px;
+    width: 380px;
+    text-align: center;
+    background-color: transparent;
+    -webkit-transition: background-color 0.2s ease;
+    -moz-transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease; }
+  .home-thumb.ajmf:hover {
+    cursor: pointer; }
+    .home-thumb.ajmf:hover:before {
+      opacity: .2; }
+    .home-thumb.ajmf:hover:after {
+      background-color: #212D3D; }
+
+.title-right.ajmf {
+  margin-top: 340px;
+  margin-bottom: -10px;
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 31.7615656014%; }
+  .title-right.ajmf:last-child {
+    margin-right: 0; }
+  .title-right.ajmf:after {
+    content: " ";
+    width: 150px;
+    height: 2px;
+    border-bottom: 1px solid #8DB8ED;
+    position: absolute;
+    margin-left: -60px; }
+
+.home-thumb.five-seasons {
+  margin-top: 70px;
+  background-image: url("../../img/fiveseasons.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 48.821174201%;
+  height: 300px;
+  overflow: hidden;
+  position: relative; }
+  .home-thumb.five-seasons:last-child {
+    margin-right: 0; }
+  .home-thumb.five-seasons:before {
+    position: relative;
+    content: " ";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 0;
+    background-color: #212D3D;
+    opacity: .5;
+    -webkit-transition: opacity 0.2s ease;
+    -moz-transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease; }
+  .home-thumb.five-seasons:after {
+    background-image: url("../../svg/diamond.svg");
+    background-size: 7%;
+    background-position: 20px 12px;
+    background-repeat: no-repeat;
+    position: absolute;
+    content: "Branding & Collateral";
+    border: 2px solid #8DB8ED;
+    transform: rotate(-90deg);
+    line-height: 2rem;
+    padding: 10px;
+    display: block;
+    z-index: 50;
+    top: 122px;
+    left: -122px;
+    width: 300px;
+    text-align: center;
+    background-color: transparent;
+    -webkit-transition: background-color 0.2s ease;
+    -moz-transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease; }
+  .home-thumb.five-seasons:hover {
+    cursor: pointer; }
+    .home-thumb.five-seasons:hover:before {
+      opacity: .2; }
+    .home-thumb.five-seasons:hover:after {
+      background-color: #212D3D; }
+
+.title-left.five-seasons {
+  margin-top: 271px;
+  margin-bottom: -5px;
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 31.7615656014%;
+  margin-left: 8.5298042998%; }
+  .title-left.five-seasons:last-child {
+    margin-right: 0; }
+  .title-left.five-seasons h2 {
+    text-align: right;
+    margin-bottom: 22px; }
+  .title-left.five-seasons:after {
+    content: " ";
+    width: 150px;
+    height: 2px;
+    border-bottom: 1px solid #8DB8ED;
+    position: absolute;
+    left: 386px;
+    z-index: 5; }
+
+.home-thumb.cellular {
+  margin-top: 70px;
+  background-image: url("../../img/cellular.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 40.2913699012%;
+  height: 300px;
+  overflow: hidden;
+  position: relative; }
+  .home-thumb.cellular:last-child {
+    margin-right: 0; }
+  .home-thumb.cellular:before {
+    position: relative;
+    content: " ";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 0;
+    background-color: #212D3D;
+    opacity: .5;
+    -webkit-transition: opacity 0.2s ease;
+    -moz-transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease; }
+  .home-thumb.cellular:after {
+    background-image: url("../../svg/diamond.svg");
+    background-size: 7%;
+    background-position: 20px 12px;
+    background-repeat: no-repeat;
+    position: absolute;
+    content: "Branding & Collateral";
+    border: 2px solid #8DB8ED;
+    transform: rotate(-90deg);
+    line-height: 2rem;
+    padding: 10px;
+    display: block;
+    z-index: 50;
+    top: 122px;
+    left: -122px;
+    width: 300px;
+    text-align: center;
+    background-color: transparent;
+    -webkit-transition: background-color 0.2s ease;
+    -moz-transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease; }
+  .home-thumb.cellular:hover {
+    cursor: pointer; }
+    .home-thumb.cellular:hover:before {
+      opacity: .2; }
+    .home-thumb.cellular:hover:after {
+      background-color: #212D3D; }
+
+.title-bottom.cellular {
+  margin-top: 0px;
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 31.7615656014%;
+  margin-left: 59.7086300988%;
+  border-left: 2px solid #8DB8ED;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-bottom: 120px; }
+  .title-bottom.cellular:last-child {
+    margin-right: 0; }
+  .title-bottom.cellular h2 {
+    text-align: left;
+    margin-bottom: 22px; }
+  .title-bottom.cellular:after {
+    content: " ";
+    width: 150px;
+    height: 2px;
+    border-bottom: 2px solid #8DB8ED;
+    position: absolute;
+    right: 340px;
+    z-index: 5; }
+
+.more-work {
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 31.7615656014%;
+  margin-left: 17.0596085997%;
+  border: 2px solid #8DB8ED;
+  color: #8DB8ED;
+  line-height: 5.5rem;
+  padding-top: +3px;
+  margin-top: 40px;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+  .more-work:last-child {
+    margin-right: 0; }
+  .more-work a {
+    font-family: "athelas", serif;
+    font-size: 1.6rem;
+    padding-left: 60px;
+    display: block; }
+  .more-work:hover {
+    background-color: #8DB8ED; }
+    .more-work:hover a {
+      color: #212D3D; }
+
+.what-what {
+  background-color: #243348;
+  height: 580px;
+  border: 2px solid #8DB8ED;
+  position: relative; }
+  .what-what .horizontal-anchor {
+    top: -49px;
+    right: 458px;
+    position: absolute; }
+  .what-what .title {
+    font-size: 2.7rem;
+    left: -230px;
+    position: absolute;
+    top: 190px; }
+    .what-what .title .italic {
+      padding-bottom: 40px;
+      border-bottom: 2px solid #8DB8ED;
+      width: 630px;
+      text-align: center;
+      transform: rotate(-90deg); }
+  .what-what .lead-in {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 40.2913699012%;
+    margin-left: 17.0596085997%;
+    font-size: 2.3rem;
+    font-family: "sofia-pro", "Sofia Pro", sans-serif;
+    padding-top: 120px; }
+    .what-what .lead-in:last-child {
+      margin-right: 0; }
+  .what-what .ethos {
+    padding-top: 50px; }
+  .what-what .list-item {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 14.7019570017%; }
+    .what-what .list-item:last-child {
+      margin-right: 0; }
+  .what-what .lilp {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 14.7019570017%;
+    line-height: 1.7rem; }
+    .what-what .lilp:last-child {
+      margin-right: 0; }

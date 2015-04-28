@@ -1,6 +1,519 @@
 //let's import some variables & good stuff.
 @import "bourbon", "neat";
 @import "variables.scss";
+@import "grid.scss";
 
 
 //okay, let's get busy!
+//some structure & foundation
+body {
+	font-size: $baseline;
+	line-height: $line-height;
+	font-family: $serif;
+	background-color: $dark;
+	color: $light;
+	h1,h2,h3,h4,h5,h6 {
+		font-family: $sans;
+	}
+	margin: 0;
+	padding: 0;
+	padding-bottom: 50px;
+}
+
+a {
+	text-decoration: none;
+	color: $light;
+}
+
+section {
+	position: relative;
+}
+
+
+
+///////base type styles
+//headings
+h2 {
+	font-size: 2.1rem;
+	font-weight: $semi;
+	letter-spacing: .025em;
+	margin-top: 0;
+	&.block {
+		font-weight: $medi;
+		letter-spacing: 0;
+	}
+}
+
+//style
+.italic {
+	font-style: italic;
+	font-family: $serif;
+	font-weight: normal;
+}
+
+.title {
+	.italic {
+		font-weight: bold;
+	}
+}
+
+.small-caps {
+	font-family: $sans;
+	font-size: 80%;
+	letter-spacing: .09rem;
+	font-weight: $semi;
+	text-transform: uppercase;
+}
+
+//some special stuff
+.block-overlay {
+	cursor: pointer;
+	position: relative;
+	display: block;
+	text-align: center;
+	height: 100%;
+	&:before {
+		position: absolute;
+  		content:" ";
+  		top:0;
+  		left:0;
+  		bottom: 0;
+  		right: 0;
+  		width:100%;
+  		height:100%;
+  		min-height: 580px;
+  		display: block;
+  		z-index: 0;
+  		background-color: $dark;
+  		opacity: .2;
+  		@include transition(opacity .4s ease);
+	}
+	h2 {
+		margin-bottom: 0;
+	}
+	p {
+		font-size: 1.2rem;
+		line-height: 1.6rem;
+	}
+	h2, p {
+		@include transition(all .3s ease);
+	}
+}
+.my-work {
+	&:hover {
+		cursor: pointer;
+		&:before {
+			opacity: 0;
+		}
+		h2 {
+			margin-top: -6px;
+		}
+		p {
+			line-height: 2rem;
+		}
+	}
+}
+
+
+//some of the window dressings
+.vertical-line {
+	@include span-columns(1);
+	border-right: 2px solid $light;
+}
+
+.vertical-anchor {
+	position: relative;
+	img {
+		position: absolute;
+		bottom: -32px;
+		left: 42px;
+		z-index: 400;
+	}
+}
+
+.horizontal-anchor {
+	transform: rotate(90deg);
+}
+
+
+///////here's nav!
+nav {
+	position: fixed;
+	width: 100%;
+	z-index: 99;
+	.brand {
+		position: absolute;
+		left: 67px;
+		top: 115px;
+	}
+	.menu-toggle {
+		position: absolute;
+		right: 55px;
+		top: 45px;
+		width: 40px;
+		height: 40px;
+		cursor: pointer;
+		p {
+			transform: rotate(-90deg);
+		}
+		.toggle {
+			position: absolute;
+			right: 13px;
+			top: 77px;
+		}
+		p, .toggle {
+			@include transition(all .3s ease);
+		}
+		&:hover {
+			p {
+				color: lighten($light, 20%);
+			}
+			.toggle {
+				top: 87px;
+				transform: rotateY(180deg);
+			}
+		}
+	}
+}
+
+
+
+
+////////here's the home page
+//hero
+.hero {
+	min-height: 80vh;
+	padding-top: 60vh;
+	.block {
+		@include span-columns(5);
+		//@include shift(1);
+	}
+	.vertical-line {
+		height: 40vh;
+		box-sizing: border-box;
+	}
+}
+
+
+
+//intention
+.my-work {
+	position: relative;
+	min-height: 580px;
+	background-image: url('../../img/stonemountain.jpg');
+	@include background();
+	@include span-columns(12);
+	.block-overlay {
+		padding-top: 21%;
+	}
+	.horizontal-anchor {
+		position: absolute;
+		bottom: -47px;
+		transform: rotate(-90deg);
+		left: 50%;
+	}
+}
+
+
+//work grid
+.work-grid {
+	position: relative;
+	margin-top: 200px;
+	height: 1950px;
+	padding-bottom: 200px;
+}
+
+.home-thumb {}
+
+//ajmf
+.home-thumb.ajmf {
+	margin-top: 100px;
+	background-image: url('../../img/ajmf.jpg');
+	@include background();
+	@include span-columns(7);
+	@include shift(1);
+	height: 380px;
+	overflow: hidden;
+	position: relative;
+	&:before {
+			position: relative;
+  			content:" ";
+  			top:0;
+  			left:0;
+  			width:100%;
+  			height:100%;
+  			display: block;
+  			z-index: 0;
+  			background-color: $dark;
+  			opacity: .5;
+  			@include transition(opacity .2s ease);
+		}
+	&:after {
+		background-image: url("../../svg/diamond.svg");
+		background-size: 7%;
+		background-position: 20px 12px;
+		background-repeat: no-repeat;
+		position: absolute;
+		content: "Illustration";
+		border: 2px solid $light;
+		transform: rotate(90deg);
+		line-height: 2rem;
+		padding: 10px;
+		display: block;
+		z-index: 50;
+		top: 162px;
+		right: -162px;
+		width: 380px;
+		text-align: center;
+		@extend .small-caps;
+		background-color: transparent;
+		@include transition(background-color .2s ease);
+	}
+	&:hover {
+		cursor: pointer;
+		&:before {
+			opacity: .2;
+		}
+		&:after {
+			background-color: $dark;
+		}
+	}
+}
+
+.title-right.ajmf {
+	margin-top: 340px;
+	margin-bottom: -10px;
+	@include span-columns(4);
+	&:after {
+		content: " ";
+		width: 150px;
+		height: 2px;
+		border-bottom: 1px solid $light;
+		position: absolute;
+		margin-left: -60px;
+	}
+}
+
+
+
+//five seasons
+.home-thumb.five-seasons {
+	margin-top: 70px;
+	background-image: url('../../img/fiveseasons.jpg');
+	@include background();
+	@include span-columns(6);
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+	&:before {
+			position: relative;
+  			content:" ";
+  			top:0;
+  			left:0;
+  			width:100%;
+  			height:100%;
+  			display: block;
+  			z-index: 0;
+  			background-color: $dark;
+  			opacity: .5;
+  			@include transition(opacity .2s ease);
+		}
+	&:after {
+		background-image: url("../../svg/diamond.svg");
+		background-size: 7%;
+		background-position: 20px 12px;
+		background-repeat: no-repeat;
+		position: absolute;
+		content: "Branding & Collateral";
+		border: 2px solid $light;
+		transform: rotate(-90deg);
+		line-height: 2rem;
+		padding: 10px;
+		display: block;
+		z-index: 50;
+		top: 122px;
+		left: -122px;
+		width: 300px;
+		text-align: center;
+		@extend .small-caps;
+		background-color: transparent;
+		@include transition(background-color .2s ease);
+	}
+	&:hover {
+		cursor: pointer;
+		&:before {
+			opacity: .2;
+		}
+		&:after {
+			background-color: $dark;
+		}
+	}
+}
+
+.title-left.five-seasons {
+	margin-top: 271px;
+	margin-bottom: -5px;
+	@include span-columns(4);
+	@include shift(1);
+	h2 {
+		text-align: right;
+		margin-bottom: 22px;
+	}
+	&:after {
+		content: " ";
+		width: 150px;
+		height: 2px;
+		border-bottom: 1px solid $light;
+		position: absolute;
+		left: 386px;
+		z-index: 5;
+	}
+}
+
+
+//cellular
+.home-thumb.cellular {
+	margin-top: 70px;
+	background-image: url('../../img/cellular.jpg');
+	@include background();
+	@include span-columns(5);
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+	&:before {
+			position: relative;
+  			content:" ";
+  			top:0;
+  			left:0;
+  			width:100%;
+  			height:100%;
+  			display: block;
+  			z-index: 0;
+  			background-color: $dark;
+  			opacity: .5;
+  			@include transition(opacity .2s ease);
+		}
+	&:after {
+		background-image: url("../../svg/diamond.svg");
+		background-size: 7%;
+		background-position: 20px 12px;
+		background-repeat: no-repeat;
+		position: absolute;
+		content: "Branding & Collateral";
+		border: 2px solid $light;
+		transform: rotate(-90deg);
+		line-height: 2rem;
+		padding: 10px;
+		display: block;
+		z-index: 50;
+		top: 122px;
+		left: -122px;
+		width: 300px;
+		text-align: center;
+		@extend .small-caps;
+		background-color: transparent;
+		@include transition(background-color .2s ease);
+	}
+	&:hover {
+		cursor: pointer;
+		&:before {
+			opacity: .2;
+		}
+		&:after {
+			background-color: $dark;
+		}
+	}
+}
+
+.title-bottom.cellular {
+	margin-top: 0px;
+	@include span-columns(4);
+	@include shift(7);
+	border-left: 2px solid $light;
+	padding-top: 30px;
+	padding-left: 30px;
+	padding-bottom: 120px;
+	h2 {
+		text-align: left;
+		margin-bottom: 22px;
+	}
+	&:after {
+		content: " ";
+		width: 150px;
+		height: 2px;
+		border-bottom: 2px solid $light;
+		position: absolute;
+		right: 340px;
+		z-index: 5;
+	}
+}
+
+
+//more work
+.more-work {
+	@include span-columns(4);
+	@include shift(2);
+	border: 2px solid $light;
+	color: $light;
+	line-height: 5.5rem;
+	padding-top: +3px;
+	margin-top: 40px;
+	@include transition(all .2s ease);
+	a {
+		font-family: $serif;
+		font-size: 1.6rem;
+		padding-left: 60px;
+		display: block;
+	}
+	&:hover {
+		background-color: $light;
+		a {
+			color: $dark;
+		}
+	}
+}
+
+
+
+//what's what
+.what-what {
+	background-color: $middle;
+	height: 580px;
+	border: 2px solid $light;
+	position: relative;
+	.horizontal-anchor {
+		top: -49px;
+		right: 458px;
+		position: absolute;
+	}
+	.title {
+		font-size: 2.7rem;
+		left: -230px;
+		position: absolute;
+		top: 190px;
+		.italic {
+			padding-bottom: 40px;
+			border-bottom: 2px solid $light;
+			width: 630px;
+			text-align: center;
+			transform: rotate(-90deg);
+		}
+	}
+	.lead-in {
+		@include span-columns(5);
+		@include shift(2);
+		font-size: 2.3rem;
+		font-family: $sans;
+		padding-top: 120px;
+	}
+	.ethos {
+		padding-top: 50px;
+	}
+	.list-item {
+		@include span-columns(2);
+	}
+	.lilp {
+		@include span-columns(2);
+		line-height: 1.7rem;
+	}
+}
