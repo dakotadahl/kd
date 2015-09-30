@@ -116,7 +116,8 @@ h2 {
     z-index: 400; }
 
 .horizontal-anchor {
-  transform: rotate(90deg); }
+  transform: rotate(90deg);
+  -webkit-transform: rotate(-90deg); }
 
 nav {
   position: fixed;
@@ -134,7 +135,8 @@ nav {
     height: 40px;
     cursor: pointer; }
     nav .menu-toggle p {
-      transform: rotate(-90deg); }
+      transform: rotate(-90deg);
+      -webkit-transform: rotate(-90deg); }
     nav .menu-toggle .toggle {
       position: absolute;
       right: 13px;
@@ -471,7 +473,8 @@ nav {
       border-bottom: 2px solid #8DB8ED;
       width: 630px;
       text-align: center;
-      transform: rotate(-90deg); }
+      transform: rotate(-90deg);
+      -webkit-transform: rotate(-90deg); }
   .what-what .lead-in {
     float: left;
     display: block;
